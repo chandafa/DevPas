@@ -19,8 +19,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from '@/components/ui/carousel';
 import {
   Card,
@@ -138,7 +136,7 @@ export default function Home() {
                 className="object-cover object-center z-[-1] opacity-10"
                 data-ai-hint={heroImage.imageHint}
             />}
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center space-y-6">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 {t('hero.title')}
@@ -147,10 +145,10 @@ export default function Home() {
                 {t('hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="rounded-lg">
                   <Link href="/join-us">{t('hero.join_button')}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="rounded-lg">
                   <Link href="/events">{t('hero.events_button')}</Link>
                 </Button>
               </div>
@@ -291,7 +289,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
                 {t('upcoming_events_section.title')}
               </h2>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="rounded-lg">
                 <Link href="/events">{t('upcoming_events_section.view_all')}</Link>
               </Button>
             </div>
@@ -310,7 +308,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
                 {t('popular_courses_section.title')}
               </h2>
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" className="rounded-lg">
                 <Link href="/courses">{t('popular_courses_section.view_all')}</Link>
               </Button>
             </div>
@@ -360,7 +358,7 @@ export default function Home() {
                     className="md:basis-1/2 lg:basis-1/3"
                   >
                     <div className="p-1 h-full">
-                      <Card className="h-full flex flex-col">
+                      <Card className="h-full flex flex-col rounded-lg">
                         <CardContent className="flex-1 p-6 text-center">
                           <Avatar className="mx-auto h-20 w-20 mb-4">
                             <AvatarImage
@@ -397,7 +395,7 @@ export default function Home() {
               <p className="mt-4 text-lg text-muted-foreground">
                 {t('cta_section.description')}
               </p>
-              <Button asChild size="lg" className="mt-8">
+              <Button asChild size="lg" className="mt-8 rounded-lg">
                 <Link href="/join-us">{t('cta_section.join_button')}</Link>
               </Button>
             </div>
