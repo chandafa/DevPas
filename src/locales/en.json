@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "courses": "Courses",
@@ -19,7 +20,7 @@
     "copyright": "© {year} DevPas. All rights reserved."
   },
   "hero": {
-    "title": "Start Your Journey with the Digital Learner Community",
+    "title": "Start Your Journey with the DevPas Community",
     "subtitle": "Learning forums, inspiring events, and certified e-courses for beginners.",
     "join_button": "Join Now",
     "events_button": "View Upcoming Events"

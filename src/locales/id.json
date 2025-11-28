@@ -1,3 +1,4 @@
+
 {
   "nav": {
     "courses": "Kursus",
@@ -19,7 +20,7 @@
     "copyright": "© {year} DevPas. Hak cipta dilindungi undang-undang."
   },
   "hero": {
-    "title": "Mulai Langkahmu Bersama Komunitas Pembelajar Digital",
+    "title": "Mulai Langkahmu Bersama Komunitas DevPas",
     "subtitle": "Forum belajar, event inspiratif, dan e-course bersertifikat untuk pemula.",
     "join_button": "Gabung Sekarang",
     "events_button": "Lihat Event Terdekat"
