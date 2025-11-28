@@ -22,6 +22,7 @@ import {
 import { useAuth } from '@/lib/auth';
 import { useTranslation } from '@/lib/i18n/provider';
 import { Skeleton } from './ui/skeleton';
+import { cn } from '@/lib/utils';
 
 export function UserNav() {
   const { user, logout, isLoggedIn, isUserLoading } = useAuth();
@@ -33,7 +34,7 @@ export function UserNav() {
 
   if (!isLoggedIn || !user) {
     return (
-      <Button asChild>
+      <Button asChild className="hidden md:inline-flex">
         <Link href="/join-us">{t('header.join_us')}</Link>
       </Button>
     );
