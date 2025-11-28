@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -128,7 +129,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full py-24 md:py-32 lg:py-40">
+        <section className="relative w-full min-h-screen flex items-center justify-center">
            {heroImage && <Image
                 src={heroImage.imageUrl}
                 alt="Hero background"
