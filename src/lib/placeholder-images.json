@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "A diverse group of people collaborating on laptops in a modern office space.",
+      "imageUrl": "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb2xsYWJvcmF0aW9uJTIwY29kZXxlbnwwfHx8fDE3NjEzNDk5OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "collaboration code"
+    },
+    {
+      "id": "course-react",
+      "description": "An abstract visualization of React components.",
+      "imageUrl": "https://images.unsplash.com/photo-1550438496-8c6e269e7886?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhYnN0cmFjdCUyMGNvZGV8ZW58MHx8fHwxNzYxMzIxMjQxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract code"
+    },
+    {
+      "id": "course-nextjs",
+      "description": "A sleek server rack, representing backend power for Next.js.",
+      "imageUrl": "https://images.unsplash.com/photo-1667984550809-ac2a63a4f7b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzZXJ2ZXIlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "server technology"
+    },
+    {
+      "id": "course-database",
+      "description": "A digital illustration of database architecture.",
+      "imageUrl": "https://images.unsplash.com/photo-1629459322097-a190793bd00b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYXJjaGl0ZWN0dXJlfGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data architecture"
+    },
+    {
+      "id": "course-devops",
+      "description": "An automated assembly line, symbolizing CI/CD pipelines.",
+      "imageUrl": "https://images.unsplash.com/photo-1506917288995-8f5ee0aa4c1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhdXRvbWF0aW9uJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NjEzNDk5OTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automation technology"
+    },
+    {
+      "id": "event-workshop",
+      "description": "A speaker presenting to an engaged audience at a tech workshop.",
+      "imageUrl": "https://images.unsplash.com/photo-1759922378092-14917cba3f59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25mZXJlbmNlJTIwcHJlc2VudGF0aW9ufGVufDB8fHx8MTc2MTI2MDYyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference presentation"
+    },
+    {
+      "id": "event-meetup",
+      "description": "People networking and chatting in a casual setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1442504028989-ab58b5f29a4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb21tdW5pdHklMjBuZXR3b3JraW5nfGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community networking"
+    },
+    {
+      "id": "event-hackathon",
+      "description": "A team of developers intensely focused on their laptops during a hackathon.",
+      "imageUrl": "https://images.unsplash.com/photo-1732210038547-4b26c84a0ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwY29kaW5nfGVufDB8fHx8MTc2MTM0OTk5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team coding"
+    },
+    {
+      "id": "user-avatar-1",
+      "description": "Profile picture for Sarah Lee.",
+      "imageUrl": "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2MTI1ODc2Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "Profile picture for David Kim.",
+      "imageUrl": "https://images.unsplash.com/photo-1594672830234-ba4cfe1202dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzYxMjU1OTU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "user-avatar-3",
+      "description": "Profile picture for Maria Garcia.",
+      "imageUrl": "https://images.unsplash.com/photo-1692736475357-7c18bfbb808b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBzbWlsaW5nfGVufDB8fHx8MTc2MTM0NTIxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    }
+  ]
+}

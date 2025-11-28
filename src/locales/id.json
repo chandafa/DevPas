@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "courses": "Kursus",
+    "events": "Event",
+    "forum": "Forum",
+    "about": "Tentang",
+    "achievement": "Pencapaian"
+  },
+  "header": {
+    "brand": "DevPas",
+    "join_us": "Gabung"
+  },
+  "footer": {
+    "about_us_heading": "Navigasi",
+    "about_us": "Tentang Kami",
+    "contact": "Kontak",
+    "connect_with_us": "Terhubung Dengan Kami",
+    "tagline": "Komunitas pembelajar digital untuk pemula. Belajar, berkolaborasi, dan bertumbuh bersama.",
+    "copyright": "© {year} DevPas. Hak cipta dilindungi undang-undang."
+  },
+  "hero": {
+    "title": "Mulai Langkahmu Bersama Komunitas Pembelajar Digital",
+    "subtitle": "Forum belajar, event inspiratif, dan e-course bersertifikat untuk pemula.",
+    "join_button": "Gabung Sekarang",
+    "events_button": "Lihat Event Terdekat"
+  },
+  "about_section": {
+    "title": "Tentang DevPas",
+    "description": "DevPas adalah wadah bagi para pegiat teknologi untuk belajar, berkolaborasi, dan berkontribusi. Kami percaya setiap orang punya potensi untuk menjadi hebat, dan kami di sini untuk mendukung setiap langkah awal perjalanan digitalmu.",
+    "learn_more": "Pelajari Lebih Lanjut",
+    "learn": "Belajar",
+    "collaborate": "Kolaborasi",
+    "contribute": "Kontribusi"
+  },
+  "org_structure_section": {
+    "title": "Struktur Organisasi",
+    "description": "Tim di balik layar yang berdedikasi untuk kemajuan komunitas.",
+    "chairman": "Ketua Komunitas",
+    "education_head": "Kepala Divisi Edukasi",
+    "ecourse_coord": "Koordinator E-Course",
+    "workshop_coord": "Koordinator Workshop",
+    "event_head": "Kepala Divisi Event",
+    "meetup_coord": "Koordinator Meetup",
+    "competition_coord": "Koordinator Kompetisi"
+  },
+  "features_section": {
+    "title": "Fitur Unggulan Kami"
+  },
+  "upcoming_events_section": {
+    "title": "Event Mendatang",
+    "view_all": "Lihat Semua"
+  },
+  "popular_courses_section": {
+    "title": "Kursus Populer",
+    "view_all": "Lihat Semua"
+  },
+  "testimonials_section": {
+    "title": "Cerita Anggota Komunitas"
+  },
+  "cta_section": {
+    "title": "Siap memulai perjalanan belajarmu?",
+    "description": "Daftar sekarang dan temukan teman seperjuanganmu!",
+    "join_button": "Gabung Komunitas"
+  },
+  "language_toggle": {
+    "tooltip": "Ganti Bahasa",
+    "changed_title": "Bahasa Diubah",
+    "changed_description": "Bahasa diatur ke {langName}."
+  },
+  "about_page": {
+    "title": "Tentang DevPas",
+    "subtitle": "Kami adalah komunitas yang bersemangat untuk membantu calon pengembang mengambil langkah pertama mereka yang paling penting ke dunia teknologi.",
+    "mission_title": "Misi Kami",
+    "mission_description": "Membangun ekosistem yang suportif dan inklusif di mana pemula dapat mempelajari keterampilan praktis, terhubung dengan rekan dan mentor, dan dengan percaya diri memulai karir mereka di industri teknologi. Kami bertujuan untuk meruntuhkan hambatan dan membuat pendidikan teknologi dapat diakses oleh semua orang, di mana saja.",
+    "values_title": "Nilai-Nilai Inti Kami",
+    "value_empowerment_title": "Pemberdayaan",
+    "value_empowerment_description": "Kami menyediakan alat dan pengetahuan bagi siapa saja untuk memulai perjalanan mereka di bidang teknologi, mendorong pertumbuhan dan kepercayaan diri.",
+    "value_community_title": "Komunitas",
+    "value_community_description": "Kami percaya pada kekuatan kolaborasi. Platform kami adalah ruang untuk belajar, berbagi, dan tumbuh bersama.",
+    "value_accessibility_title": "Aksesibilitas",
+    "value_accessibility_description": "Pendidikan teknologi berkualitas tinggi harus dapat diakses oleh semua kalangan, tanpa memandang latar belakang atau pengalaman.",
+    "join_journey_title": "Bergabunglah dengan Perjalanan Kami",
+    "join_journey_subtitle": "Jadilah bagian dari komunitas kami yang sedang berkembang dan mulailah perjalanan teknologi Anda hari ini.",
+    "get_started_button": "Mulai"
+  },
+  "courses_page": {
+    "title": "Kursus Kami",
+    "subtitle": "Dari fundamental hingga topik lanjutan, kursus kami dirancang untuk membekali Anda dengan keterampilan yang dibutuhkan di lanskap teknologi modern.",
+    "filter_by_category": "Filter berdasarkan kategori",
+    "sort_by": "Urutkan berdasarkan",
+    "sort_title_asc": "Judul (A-Z)",
+    "sort_title_desc": "Judul (Z-A)",
+    "sort_duration_asc": "Durasi (Terpendek)",
+    "sort_duration_desc": "Durasi (Terpanjang)"
+  },
+  "events_page": {
+    "title": "Acara Komunitas",
+    "subtitle": "Ikuti lokakarya, meetup, dan hackathon kami. Terhubung dengan rekan-rekan, belajar dari para ahli, dan perluas jaringan Anda.",
+    "sort_by": "Urutkan berdasarkan",
+    "sort_date_asc": "Tanggal (Terdekat)",
+    "sort_date_desc": "Tanggal (Terlama)",
+    "sort_title_asc": "Judul (A-Z)",
+    "sort_title_desc": "Judul (Z-A)"
+  },
+  "forum_page": {
+    "title": "Forum Diskusi",
+    "subtitle": "Ajukan pertanyaan, bagikan pengetahuan, dan terhubung dengan komunitas.",
+    "new_discussion_button": "Mulai Diskusi Baru"
+  },
+  "achievement_page": {
+    "title": "Pencapaian Saya",
+    "subtitle": "Lacak kemajuan Anda dan rayakan pencapaian Anda dalam komunitas.",
+    "overall_progress_title": "Kemajuan Keseluruhan",
+    "progress_description": "Anda telah mendapatkan {earnedCount} dari {totalCount} pencapaian.",
+    "portfolio_title": "Portofolio Saya",
+    "no_projects_yet": "Anda belum menambahkan proyek apa pun.",
+    "admin_can_add_projects": "Admin dapat menambahkan proyek melalui dasbor."
+  },
+  "register_page": {
+    "title": "Lengkapi Pendaftaran Anda",
+    "subtitle": "Isi detail di bawah ini untuk membuat akun Anda.",
+    "form_name_label": "Nama Lengkap",
+    "form_name_placeholder": "Nama lengkap Anda",
+    "form_email_label": "Email",
+    "form_university_label": "Universitas",
+    "form_university_placeholder": "Universitas Anda",
+    "form_major_label": "Jurusan",
+    "form_major_placeholder": "contoh, Teknik Informatika",
+    "form_year_label": "Tahun Angkatan",
+    "form_year_placeholder": "contoh, 2021",
+    "form_npm_label": "NPM / Nomor Induk Mahasiswa",
+    "form_npm_placeholder": "NPM Anda",
+    "form_password_label": "Kata Sandi",
+    "form_confirm_password_label": "Konfirmasi Kata Sandi",
+    "create_account_button": "Buat Akun",
+    "toast_success_title": "Pendaftaran Berhasil!",
+    "toast_success_description": "Anda telah berhasil membuat akun.",
+    "validation": {
+      "name_min": "Nama harus terdiri dari minimal 2 karakter.",
+      "university_required": "Nama universitas wajib diisi.",
+      "major_required": "Jurusan wajib diisi.",
+      "year_min": "Silakan masukkan tahun yang valid.",
+      "npm_required": "NPM/Nomor Induk Mahasiswa wajib diisi.",
+      "password_min": "Kata sandi harus terdiri dari minimal 8 karakter.",
+      "password_match": "Kata sandi tidak cocok."
+    }
+  }
+}

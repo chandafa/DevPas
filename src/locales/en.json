@@ -1,0 +1,148 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "events": "Events",
+    "forum": "Forum",
+    "about": "About",
+    "achievement": "Achievement"
+  },
+  "header": {
+    "brand": "DevPas",
+    "join_us": "Join Us"
+  },
+  "footer": {
+    "about_us_heading": "Navigation",
+    "about_us": "About Us",
+    "contact": "Contact",
+    "connect_with_us": "Connect With Us",
+    "tagline": "A digital learning community for beginners. Learn, collaborate, and grow together.",
+    "copyright": "© {year} DevPas. All rights reserved."
+  },
+  "hero": {
+    "title": "Start Your Journey with the Digital Learner Community",
+    "subtitle": "Learning forums, inspiring events, and certified e-courses for beginners.",
+    "join_button": "Join Now",
+    "events_button": "View Upcoming Events"
+  },
+  "about_section": {
+    "title": "About DevPas",
+    "description": "DevPas is a place for tech enthusiasts to learn, collaborate, and contribute. We believe everyone has the potential to be great, and we are here to support every initial step of your digital journey.",
+    "learn_more": "Learn More",
+    "learn": "Learn",
+    "collaborate": "Collaborate",
+    "contribute": "Contribute"
+  },
+  "org_structure_section": {
+    "title": "Organizational Structure",
+    "description": "The dedicated team behind the community's progress.",
+    "chairman": "Community Chairman",
+    "education_head": "Head of Education Division",
+    "ecourse_coord": "E-Course Coordinator",
+    "workshop_coord": "Workshop Coordinator",
+    "event_head": "Head of Event Division",
+    "meetup_coord": "Meetup Coordinator",
+    "competition_coord": "Competition Coordinator"
+  },
+  "features_section": {
+    "title": "Our Featured Features"
+  },
+  "upcoming_events_section": {
+    "title": "Upcoming Events",
+    "view_all": "View All"
+  },
+  "popular_courses_section": {
+    "title": "Popular Courses",
+    "view_all": "View All"
+  },
+  "testimonials_section": {
+    "title": "Community Member Stories"
+  },
+  "cta_section": {
+    "title": "Ready to start your learning journey?",
+    "description": "Sign up now and find your fellow learners!",
+    "join_button": "Join Community"
+  },
+  "language_toggle": {
+    "tooltip": "Change Language",
+    "changed_title": "Language Changed",
+    "changed_description": "Language set to {langName}."
+  },
+  "about_page": {
+    "title": "About DevPas",
+    "subtitle": "We are a passionate community dedicated to helping aspiring developers take their first, most crucial steps into the world of technology.",
+    "mission_title": "Our Mission",
+    "mission_description": "To build a supportive and inclusive ecosystem where beginners can learn practical skills, connect with peers and mentors, and confidently launch their careers in the tech industry. We aim to break down barriers and make technology education accessible to everyone, everywhere.",
+    "values_title": "Our Core Values",
+    "value_empowerment_title": "Empowerment",
+    "value_empowerment_description": "We provide the tools and knowledge for anyone to start their journey in technology, fostering growth and confidence.",
+    "value_community_title": "Community",
+    "value_community_description": "We believe in the power of collaboration. Our platform is a space for learning, sharing, and growing together.",
+    "value_accessibility_title": "Accessibility",
+    "value_accessibility_description": "High-quality tech education should be accessible to all, regardless of background or experience.",
+    "join_journey_title": "Join Our Journey",
+    "join_journey_subtitle": "Become a part of our growing community and start your tech journey today.",
+    "get_started_button": "Get Started"
+  },
+  "courses_page": {
+    "title": "Our Courses",
+    "subtitle": "From fundamentals to advanced topics, our courses are designed to equip you with the skills needed in the modern tech landscape.",
+    "filter_by_category": "Filter by category",
+    "sort_by": "Sort by",
+    "sort_title_asc": "Title (A-Z)",
+    "sort_title_desc": "Title (Z-A)",
+    "sort_duration_asc": "Duration (Shortest)",
+    "sort_duration_desc": "Duration (Longest)"
+  },
+  "events_page": {
+    "title": "Community Events",
+    "subtitle": "Join our workshops, meetups, and hackathons. Connect with peers, learn from experts, and grow your network.",
+    "sort_by": "Sort by",
+    "sort_date_asc": "Date (Soonest)",
+    "sort_date_desc": "Date (Latest)",
+    "sort_title_asc": "Title (A-Z)",
+    "sort_title_desc": "Title (Z-A)"
+  },
+  "forum_page": {
+    "title": "Discussion Forum",
+    "subtitle": "Ask questions, share knowledge, and connect with the community.",
+    "new_discussion_button": "Start a New Discussion"
+  },
+  "achievement_page": {
+    "title": "My Achievements",
+    "subtitle": "Track your progress and celebrate your accomplishments within the community.",
+    "overall_progress_title": "Overall Progress",
+    "progress_description": "You've earned {earnedCount} of {totalCount} achievements.",
+    "portfolio_title": "My Portfolio",
+    "no_projects_yet": "You haven't added any projects yet.",
+    "admin_can_add_projects": "An admin can add projects via the dashboard."
+  },
+  "register_page": {
+    "title": "Complete Your Registration",
+    "subtitle": "Fill in the details below to create your account.",
+    "form_name_label": "Full Name",
+    "form_name_placeholder": "Your full name",
+    "form_email_label": "Email",
+    "form_university_label": "University",
+    "form_university_placeholder": "Your university",
+    "form_major_label": "Major",
+    "form_major_placeholder": "e.g., Computer Science",
+    "form_year_label": "Batch Year",
+    "form_year_placeholder": "e.g., 2021",
+    "form_npm_label": "NPM / Student ID",
+    "form_npm_placeholder": "Your student ID",
+    "form_password_label": "Password",
+    "form_confirm_password_label": "Confirm Password",
+    "create_account_button": "Create Account",
+    "toast_success_title": "Registration Successful!",
+    "toast_success_description": "You have successfully created an account.",
+    "validation": {
+      "name_min": "Name must be at least 2 characters.",
+      "university_required": "University name is required.",
+      "major_required": "Major is required.",
+      "year_min": "Please enter a valid year.",
+      "npm_required": "NPM/Student ID is required.",
+      "password_min": "Password must be at least 8 characters.",
+      "password_match": "Passwords don't match"
+    }
+  }
+}

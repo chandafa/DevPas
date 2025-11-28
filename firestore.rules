@@ -1,0 +1,111 @@
+/**
+ * @file Firestore Security Rules for DevPas Hub
+ * @description This ruleset enforces a strict user-ownership model for user accounts and profiles,
+ *              and restricts activity logs to owner-only access under each user account.
+ *
+ * Data Structure:
+ * - /userAccounts/{userAccountId}: Stores user account information; document ID is the userAccountId.
+ * - /userProfiles/{userProfileId}: Stores user profile information; document ID is the userProfileId.
+ * - /userAccounts/{userAccountId}/activityLogs/{activityLogId}: Stores activity logs for a specific user.
+ *
+ * Key Security Decisions:
+ * - Users can only create their own user account and profile.
+ * - Users can only read and write their own profiles and activity logs.
+ * - Listing of user accounts or profiles is not allowed.
+ * - Denormalization: ActivityLog documents denormalize the userAccountId to simplify authorization checks.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Controls access to user account documents.
+     * @path /userAccounts/{userAccountId}
+     * @allow (create) Signed-in user creates their own account if the userAccountId matches their Firebase UID.
+     * @allow (get) Signed-in user reads their own account data if the userAccountId matches their Firebase UID.
+     * @allow (update) Signed-in user updates their own account data if the userAccountId matches their Firebase UID and the document exists.
+     * @allow (delete) Signed-in user deletes their own account data if the userAccountId matches their Firebase UID and the document exists.
+     * @deny (list) Listing user accounts is not allowed.
+     * @principle Enforces document ownership for all operations on user accounts.
+     */
+    match /userAccounts/{userAccountId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner(userId) {
+        return isSignedIn() && request.auth.uid == userId;
+      }
+
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+
+      allow get: if isOwner(userAccountId);
+      allow list: if false;
+      allow create: if isOwner(userAccountId) && request.resource.data.id == userAccountId && request.resource.data.firebaseUid == request.auth.uid;
+      allow update: if isExistingOwner(userAccountId) && request.resource.data.id == resource.data.id && request.resource.data.firebaseUid == resource.data.firebaseUid;
+      allow delete: if isExistingOwner(userAccountId);
+    }
+
+    /**
+     * @description Controls access to user profile documents.
+     * @path /userProfiles/{userProfileId}
+     * @allow (create) Signed-in user creates their own profile if the userProfileId matches the profileId stored in their UserAccount document.
+     * @allow (get) Signed-in user reads their own profile data if the userProfileId matches the profileId stored in their UserAccount document.
+     * @allow (update) Signed-in user updates their own profile data if the userProfileId matches the profileId stored in their UserAccount document and the document exists.
+     * @allow (delete) Signed-in user deletes their own profile data if the userProfileId matches the profileId stored in their UserAccount document and the document exists.
+     * @deny (list) Listing user profiles is not allowed.
+     * @principle Enforces document ownership and relational integrity between UserAccount and UserProfile documents.
+     */
+    match /userProfiles/{userProfileId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwnerOfProfile(profileId) {
+          return isSignedIn() && get(/databases/$(database)/documents/userAccounts/$(request.auth.uid)).data.profileId == profileId;
+      }
+
+      function isExistingOwnerOfProfile(profileId) {
+        return isOwnerOfProfile(profileId) && resource != null;
+      }
+
+      allow get: if isOwnerOfProfile(userProfileId);
+      allow list: if false;
+      allow create: if isOwnerOfProfile(userProfileId);
+      allow update: if isExistingOwnerOfProfile(userProfileId);
+      allow delete: if isExistingOwnerOfProfile(userProfileId);
+    }
+
+    /**
+     * @description Controls access to activity log documents within a user account.
+     * @path /userAccounts/{userAccountId}/activityLogs/{activityLogId}
+     * @allow (create) Signed-in user creates activity log entries under their own account if userAccountId matches their Firebase UID.
+     * @allow (get) Signed-in user reads activity log entries under their own account if userAccountId matches their Firebase UID.
+     * @allow (update) Signed-in user updates activity log entries under their own account if userAccountId matches their Firebase UID and the document exists.
+     * @allow (delete) Signed-in user deletes activity log entries under their own account if userAccountId matches their Firebase UID and the document exists.
+     * @allow (list) Signed-in user lists activity log entries under their own account if userAccountId matches their Firebase UID.
+     * @principle Enforces document ownership and ensures data consistency by matching the userAccountId in the path with the one in the document.
+     */
+    match /userAccounts/{userAccountId}/activityLogs/{activityLogId} {
+      function isSignedIn() {
+        return request.auth != null;
+      }
+
+      function isOwner(userId) {
+        return isSignedIn() && request.auth.uid == userId;
+      }
+
+      function isExistingOwner(userId) {
+        return isOwner(userId) && resource != null;
+      }
+
+      allow get: if isOwner(userAccountId);
+      allow list: if isOwner(userAccountId);
+      allow create: if isOwner(userAccountId) && request.resource.data.userAccountId == userAccountId;
+      allow update: if isExistingOwner(userAccountId) && request.resource.data.userAccountId == resource.data.userAccountId;
+      allow delete: if isExistingOwner(userAccountId);
+    }
+  }
+}

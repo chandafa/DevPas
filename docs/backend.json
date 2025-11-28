@@ -1,0 +1,171 @@
+
+{
+  "entities": {
+    "UserAccount": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserAccount",
+      "type": "object",
+      "description": "Stores user account information, linked to Firebase Authentication.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the user account."
+        },
+        "firebaseUid": {
+          "type": "string",
+          "description": "The Firebase User ID associated with this account."
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "format": "email"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User's display name."
+        },
+        "role": {
+          "type": "string",
+          "description": "User's role (admin, mentor, member)."
+        },
+        "profileId": {
+          "type": "string",
+          "description": "Reference to UserProfile. (Relationship: UserAccount 1:1 UserProfile)"
+        },
+        "activityLogIds": {
+          "type": "array",
+          "description": "References to ActivityLogs. (Relationship: UserAccount 1:N ActivityLog)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "firebaseUid",
+        "email",
+        "displayName",
+        "role",
+        "profileId"
+      ]
+    },
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Stores user profile information.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User's full name."
+        },
+        "email": {
+            "type": "string",
+            "description": "User's email, used for login."
+        },
+        "university": {
+            "type": "string",
+            "description": "User's university."
+        },
+        "major": {
+            "type": "string",
+            "description": "User's major of study."
+        },
+        "year": {
+            "type": "string",
+            "description": "User's batch year."
+        },
+        "npm": {
+            "type": "string",
+            "description": "User's student ID number."
+        },
+        "role": {
+            "type": "string",
+            "enum": ["member", "mentor", "admin"],
+            "description": "The role of the user."
+        },
+        "bio": {
+          "type": "string",
+          "description": "User's biography."
+        },
+        "avatarUrl": {
+          "type": "string",
+          "description": "URL of user's avatar image.",
+          "format": "uri"
+        },
+        "interests": {
+          "type": "array",
+          "description": "User's interests.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "university",
+        "major",
+        "year",
+        "npm",
+        "role"
+      ]
+    },
+    "ActivityLog": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ActivityLog",
+      "type": "object",
+      "description": "Stores user activity logs.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the activity log."
+        },
+        "userAccountId": {
+          "type": "string",
+          "description": "Reference to UserAccount. (Relationship: UserAccount 1:N ActivityLog)"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of the activity.",
+          "format": "date-time"
+        },
+        "activityType": {
+          "type": "string",
+          "description": "Type of activity (e.g., login, course enrollment, event RSVP)."
+        },
+        "details": {
+          "type": "string",
+          "description": "Details of the activity."
+        }
+      },
+      "required": [
+        "id",
+        "userAccountId",
+        "timestamp",
+        "activityType",
+        "details"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "google.com"
+    ]
+  },
+  "firestore": {
+     "/userProfiles/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Stores public-facing user profile information. The document ID is the same as the Firebase Auth UID."
+    },
+    "/userAccounts/{userAccountId}/activityLogs/{activityLogId}": {
+      "schema": {
+        "$ref": "#/entities/ActivityLog"
+      },
+      "description": "Stores user activity logs related to a specific user. Denormalizes userAccountId into each ActivityLog document."
+    }
+  }
+}
