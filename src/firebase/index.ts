@@ -1,6 +1,6 @@
 'use client';
 
-import { firebaseConfig } from '@/firebase/config';
+import { firebaseConfig, isFirebaseConfigValid } from '@/firebase/config';
 import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore'
@@ -17,12 +17,17 @@ export function initializeFirebase() {
       // Attempt to initialize via Firebase App Hosting environment variables
       firebaseApp = initializeApp();
     } catch (e) {
-      // Only warn in production because it's normal to use the firebaseConfig to initialize
-      // during development
-      if (process.env.NODE_ENV === "production") {
-        console.warn('Automatic initialization failed. Falling back to firebase config object.', e);
+      // If auto-init fails, fall back to the explicit config from .env
+      if (isFirebaseConfigValid()) {
+        firebaseApp = initializeApp(firebaseConfig);
+      } else {
+        console.error(
+          'Firebase initialization failed. Please check your .env file and Firebase project configuration.'
+        );
+        // We can't proceed without a valid config, so we throw an error.
+        // In a real app, you might want to show a more user-friendly message.
+        throw new Error('Firebase configuration is invalid.');
       }
-      firebaseApp = initializeApp(firebaseConfig);
     }
 
     return getSdks(firebaseApp);
