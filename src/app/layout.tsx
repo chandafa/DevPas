@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import 'aos/dist/aos.css'; 
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 import SiteHeader from '@/components/layout/header';
@@ -8,6 +9,7 @@ import { AuthProvider } from '@/lib/auth';
 import { ThemeProvider } from '@/components/theme-provider';
 import { LanguageProvider } from '@/lib/i18n/provider';
 import { FirebaseClientProvider } from '@/firebase';
+import { AOSInit } from '@/components/AOSInit';
 
 export const metadata: Metadata = {
   title: 'DevPas Hub',
@@ -51,6 +53,7 @@ export default function RootLayout({
           <FirebaseClientProvider>
             <AuthProvider>
               <LanguageProvider>
+                 <AOSInit />
                 <div className="relative flex min-h-screen flex-col">
                   <SiteHeader />
                   <main className="flex-1 px-4 sm:px-6 lg:px-8">{children}</main>

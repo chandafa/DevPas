@@ -128,7 +128,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full flex flex-col items-center justify-center min-h-screen">
+        <section className="relative flex w-full flex-col items-center justify-center min-h-screen">
            {heroImage && <Image
                 src={heroImage.imageUrl}
                 alt="Hero background"
@@ -157,7 +157,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section className="bg-secondary/30 py-20 md:py-28">
+        <section className="bg-secondary/30 py-20 md:py-28" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-4">
@@ -192,7 +192,7 @@ export default function Home() {
         </section>
 
         {/* Org Structure Section */}
-        <section className="py-20 md:py-28">
+        <section className="py-20 md:py-28" data-aos="fade-up">
             <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                  <div className="mx-auto max-w-2xl text-center mb-20">
                     <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -257,7 +257,7 @@ export default function Home() {
 
 
         {/* Feature Highlights */}
-        <section className="bg-secondary/30 py-20 md:py-28">
+        <section className="bg-secondary/30 py-20 md:py-28" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center mb-12">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -283,7 +283,7 @@ export default function Home() {
         </section>
 
         {/* Upcoming Events */}
-        <section className="py-20 md:py-28">
+        <section className="py-20 md:py-28" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-4 justify-between items-center mb-12">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -302,7 +302,7 @@ export default function Home() {
         </section>
 
         {/* Popular Courses */}
-        <section className="bg-secondary/30 py-20 md:py-28">
+        <section className="bg-secondary/30 py-20 md:py-28" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-4 justify-between items-center mb-12">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
@@ -321,7 +321,7 @@ export default function Home() {
         </section>
 
         {/* Community Statistics */}
-        <section className="bg-primary text-primary-foreground py-20">
+        <section className="bg-primary text-primary-foreground py-20" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               {stats.map((stat) => (
@@ -339,7 +339,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 md:py-28">
+        <section className="py-20 md:py-28" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl text-center mb-12">
               {t('testimonials_section.title')}
@@ -386,7 +386,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-secondary/30">
+        <section className="bg-secondary/30" data-aos="fade-up">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center py-20 md:py-24">
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
