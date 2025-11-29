@@ -27,6 +27,7 @@ export default function SiteHeader() {
     { title: t('nav.events'), href: '/events' },
     { title: t('nav.forum'), href: '/forum' },
     { title: t('nav.about'), href: '/about' },
+    { title: t('nav.blog'), href: '/blog' },
     { title: t('nav.achievement'), href: '/achievement' },
   ];
 
