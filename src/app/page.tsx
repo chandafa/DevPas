@@ -268,7 +268,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature) => (
                 <Link key={feature.title} href={feature.href}>
-                    <div className="h-full rounded-lg border bg-card p-6 shadow-sm hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                    <div className="h-full border bg-card p-6 shadow-sm hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
                     {feature.icon}
                     <h3 className="mt-4 text-xl font-bold font-headline">
                         {feature.title}
@@ -396,7 +396,7 @@ export default function Home() {
               <p className="mt-4 text-lg text-muted-foreground">
                 {t('cta_section.description')}
               </p>
-              <Button asChild size="lg" className="mt-8 rounded-lg">
+              <Button asChild size="lg" className="rounded-lg">
                 <Link href="/join-us">{t('cta_section.join_button')}</Link>
               </Button>
             </div>
@@ -406,5 +406,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
