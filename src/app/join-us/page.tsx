@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Icons } from '@/components/icons';
@@ -13,11 +14,14 @@ export default function JoinUsPage() {
   const router = useRouter();
 
   useEffect(() => {
+    // Ketika status loading selesai dan user sudah login, arahkan ke dashboard
     if (!isUserLoading && isLoggedIn) {
       router.push('/dashboard');
     }
   }, [isLoggedIn, isUserLoading, router]);
 
+  // Selama status loading atau jika user sudah login, tampilkan loader
+  // untuk mencegah tampilan singkat halaman login sebelum redirect.
   if (isUserLoading || isLoggedIn) {
     return (
       <div className="flex h-screen items-center justify-center">
@@ -26,6 +30,7 @@ export default function JoinUsPage() {
     );
   }
 
+  // Jika tidak loading dan belum login, tampilkan halaman join-us
   return (
     <div className="container relative flex min-h-screen flex-col items-center justify-center py-12 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
