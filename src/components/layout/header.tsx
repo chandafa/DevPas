@@ -57,7 +57,9 @@ export default function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <LanguageToggle />
           <ThemeToggle />
-          <UserNav />
+          <div className='hidden md:block'>
+            <UserNav />
+          </div>
 
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -93,7 +95,7 @@ export default function SiteHeader() {
                     ))}
                   </nav>
                   <div className="py-6">
-                    {/* In mobile, UserNav is often better inside the sheet */}
+                    <UserNav />
                   </div>
                 </div>
               </div>

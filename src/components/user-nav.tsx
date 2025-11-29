@@ -34,7 +34,7 @@ export function UserNav() {
 
   if (!isLoggedIn || !user) {
     return (
-      <Button asChild className="hidden md:inline-flex">
+      <Button asChild>
         <Link href="/join-us">{t('header.join_us')}</Link>
       </Button>
     );
