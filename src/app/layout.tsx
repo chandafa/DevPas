@@ -50,7 +50,7 @@ export default function RootLayout({
               <LanguageProvider>
                 <div className="relative flex min-h-screen flex-col">
                   <SiteHeader />
-                  <main className="flex-1">{children}</main>
+                  <main className="flex-1 px-4 sm:px-6 lg:px-8">{children}</main>
                   <SiteFooter />
                 </div>
                 <Toaster />
