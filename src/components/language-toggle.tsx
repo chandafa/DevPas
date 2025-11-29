@@ -43,7 +43,7 @@ export function LanguageToggle() {
 
   if (!mounted) {
     return (
-        <Button variant="ghost" size="icon" className="w-5 h-5" disabled>
+        <Button variant="ghost" size="icon" className="h-5 w-5" disabled>
             <Globe className="h-5 w-5" />
         </Button>
     )

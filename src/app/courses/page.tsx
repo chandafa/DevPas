@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useTranslation } from '@/lib/i18n/provider';
 
 const courseCategories = [
   'All',
@@ -18,6 +19,7 @@ const courseCategories = [
 ];
 
 export default function CoursesPage() {
+  const { t } = useTranslation();
   const [filteredCourses, setFilteredCourses] = useState<Course[]>(courses);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortOrder, setSortOrder] = useState('title-asc');
@@ -58,11 +60,10 @@ export default function CoursesPage() {
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div className="mb-12 text-center">
         <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Our Courses
+          {t('courses_page.title')}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-          From fundamentals to advanced topics, our courses are designed to
-          equip you with the skills needed in the modern tech landscape.
+          {t('courses_page.subtitle')}
         </p>
       </div>
 
@@ -70,7 +71,7 @@ export default function CoursesPage() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
             <SelectTrigger className="w-full sm:w-[180px]">
-              <SelectValue placeholder="Filter by category" />
+              <SelectValue placeholder={t('courses_page.filter_by_category')} />
             </SelectTrigger>
             <SelectContent>
               {courseCategories.map((category) => (
@@ -83,13 +84,13 @@ export default function CoursesPage() {
         </div>
         <Select value={sortOrder} onValueChange={setSortOrder}>
           <SelectTrigger className="w-full sm:w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('courses_page.sort_by')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="title-asc">Title (A-Z)</SelectItem>
-            <SelectItem value="title-desc">Title (Z-A)</SelectItem>
-            <SelectItem value="duration-asc">Duration (Shortest)</SelectItem>
-            <SelectItem value="duration-desc">Duration (Longest)</SelectItem>
+            <SelectItem value="title-asc">{t('courses_page.sort_title_asc')}</SelectItem>
+            <SelectItem value="title-desc">{t('courses_page.sort_title_desc')}</SelectItem>
+            <SelectItem value="duration-asc">{t('courses_page.sort_duration_asc')}</SelectItem>
+            <SelectItem value="duration-desc">{t('courses_page.sort_duration_desc')}</SelectItem>
           </SelectContent>
         </Select>
       </div>

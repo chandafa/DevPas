@@ -1,56 +1,61 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useTranslation } from '@/lib/i18n/provider';
 import { Eye, Rocket, Users } from 'lucide-react';
 import Link from 'next/link';
 
-const values = [
-  {
-    icon: <Rocket className="mb-4 h-8 w-8 text-primary" />,
-    title: 'Empowerment',
-    description: 'We provide the tools and knowledge for anyone to start their journey in technology, fostering growth and confidence.',
-  },
-  {
-    icon: <Users className="mb-4 h-8 w-8 text-primary" />,
-    title: 'Community',
-    description: 'We believe in the power of collaboration. Our platform is a space for learning, sharing, and growing together.',
-  },
-  {
-    icon: <Eye className="mb-4 h-8 w-8 text-primary" />,
-    title: 'Accessibility',
-    description: 'High-quality tech education should be accessible to all, regardless of background or experience.',
-  },
-];
-
 export default function AboutPage() {
+  const { t } = useTranslation();
+
+  const values = [
+    {
+      icon: <Rocket className="mb-4 h-8 w-8 text-primary" />,
+      title: t('about_page.value_empowerment_title'),
+      description: t('about_page.value_empowerment_description'),
+    },
+    {
+      icon: <Users className="mb-4 h-8 w-8 text-primary" />,
+      title: t('about_page.value_community_title'),
+      description: t('about_page.value_community_description'),
+    },
+    {
+      icon: <Eye className="mb-4 h-8 w-8 text-primary" />,
+      title: t('about_page.value_accessibility_title'),
+      description: t('about_page.value_accessibility_description'),
+    },
+  ];
+
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
       <div className="text-center">
         <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          About DevPas
+          {t('about_page.title')}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-          We are a passionate community dedicated to helping aspiring developers take their first, most crucial steps into the world of technology.
+          {t('about_page.subtitle')}
         </p>
       </div>
 
       <div className="mt-16">
         <h2 className="mb-10 text-center font-headline text-2xl font-bold tracking-tighter sm:text-3xl">
-          Our Mission
+          {t('about_page.mission_title')}
         </h2>
-        <div className="mx-auto max-w-3xl rounded-lg border bg-card p-6 text-center text-base shadow-lg md:p-8 md:text-lg">
+        <div className="mx-auto max-w-3xl border bg-card p-6 text-center text-base shadow-lg md:p-8 md:text-lg">
           <p className="text-muted-foreground">
-            To build a supportive and inclusive ecosystem where beginners can learn practical skills, connect with peers and mentors, and confidently launch their careers in the tech industry. We aim to break down barriers and make technology education accessible to everyone, everywhere.
+            {t('about_page.mission_description')}
           </p>
         </div>
       </div>
 
       <div className="mt-16">
         <h2 className="mb-10 text-center font-headline text-2xl font-bold tracking-tighter sm:text-3xl">
-          Our Core Values
+          {t('about_page.values_title')}
         </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {values.map((value) => (
-            <Card key={value.title} className="rounded-lg text-center">
+            <Card key={value.title} className="text-center">
               <CardHeader>
                 {value.icon}
                 <CardTitle className="font-headline">{value.title}</CardTitle>
@@ -65,13 +70,13 @@ export default function AboutPage() {
 
        <div className="mt-20 text-center">
         <h2 className="font-headline text-2xl font-bold tracking-tighter sm:text-3xl">
-          Join Our Journey
+          {t('about_page.join_journey_title')}
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
-          Become a part of our growing community and start your tech journey today.
+          {t('about_page.join_journey_subtitle')}
         </p>
-        <Button asChild size="lg" className="mt-8 rounded-lg">
-          <Link href="/join-us">Get Started</Link>
+        <Button asChild size="lg" className="mt-8">
+          <Link href="/join-us">{t('about_page.get_started_button')}</Link>
         </Button>
       </div>
     </div>

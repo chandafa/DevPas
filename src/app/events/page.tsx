@@ -11,8 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useTranslation } from '@/lib/i18n/provider';
 
 export default function EventsPage() {
+  const { t } = useTranslation();
   const [sortedEvents, setSortedEvents] = useState<Event[]>(events);
   const [sortOrder, setSortOrder] = useState('date-asc');
 
@@ -43,24 +45,23 @@ export default function EventsPage() {
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div className="mb-12 text-center">
         <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Community Events
+          {t('events_page.title')}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-          Join our workshops, meetups, and hackathons. Connect with peers, learn
-          from experts, and grow your network.
+          {t('events_page.subtitle')}
         </p>
       </div>
 
       <div className="mb-8 flex justify-end">
         <Select value={sortOrder} onValueChange={setSortOrder}>
           <SelectTrigger className="w-full sm:w-[180px]">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('events_page.sort_by')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="date-asc">Date (Soonest)</SelectItem>
-            <SelectItem value="date-desc">Date (Latest)</SelectItem>
-            <SelectItem value="title-asc">Title (A-Z)</SelectItem>
-            <SelectItem value="title-desc">Title (Z-A)</SelectItem>
+            <SelectItem value="date-asc">{t('events_page.sort_date_asc')}</SelectItem>
+            <SelectItem value="date-desc">{t('events_page.sort_date_desc')}</SelectItem>
+            <SelectItem value="title-asc">{t('events_page.sort_title_asc')}</SelectItem>
+            <SelectItem value="title-desc">{t('events_page.sort_title_desc')}</SelectItem>
           </SelectContent>
         </Select>
       </div>

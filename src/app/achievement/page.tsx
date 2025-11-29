@@ -1,9 +1,12 @@
+'use client';
+
 import { Award, CheckCircle2, Star, Shield, Trophy, Briefcase, PlusCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { useTranslation } from '@/lib/i18n/provider';
 
 const achievements = [
   { icon: <Star className="h-8 w-8 text-yellow-400" />, title: 'Course Starter', description: 'Finish your first module', earned: true },
@@ -20,6 +23,7 @@ const portfolioProjects = [
 ]
 
 export default function AchievementPage() {
+  const { t } = useTranslation();
   const earnedCount = achievements.filter(a => a.earned).length;
   const totalCount = achievements.length;
   const progressPercentage = (earnedCount / totalCount) * 100;
@@ -29,20 +33,20 @@ export default function AchievementPage() {
       <div className="text-center">
         <Award className="mx-auto h-12 w-12 text-primary sm:h-16 sm:w-16" />
         <h1 className="mt-6 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          My Achievements
+          {t('achievement_page.title')}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
-          Track your progress and celebrate your accomplishments within the community.
+          {t('achievement_page.subtitle')}
         </p>
       </div>
 
-       <Card className="mt-12 rounded-lg sm:mt-16">
+       <Card className="mt-12 sm:mt-16">
         <CardHeader>
-          <CardTitle>Overall Progress</CardTitle>
+          <CardTitle>{t('achievement_page.overall_progress_title')}</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-2 flex items-center justify-between">
-            <p className="text-sm text-muted-foreground sm:text-base">You've earned {earnedCount} of {totalCount} achievements.</p>
+            <p className="text-sm text-muted-foreground sm:text-base">{t('achievement_page.progress_description').replace('{earnedCount}', earnedCount.toString()).replace('{totalCount}', totalCount.toString())}</p>
             <p className="font-bold text-primary">{Math.round(progressPercentage)}%</p>
           </div>
           <Progress value={progressPercentage} />
@@ -52,7 +56,7 @@ export default function AchievementPage() {
       <div className="mt-12">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {achievements.map((ach) => (
-            <Card key={ach.title} className={`rounded-lg transition-opacity ${!ach.earned ? 'opacity-40' : ''}`}>
+            <Card key={ach.title} className={`transition-opacity ${!ach.earned ? 'opacity-40' : ''}`}>
               <CardHeader className="flex flex-row items-center gap-4">
                 {ach.icon}
                 <div>
@@ -67,17 +71,17 @@ export default function AchievementPage() {
         </div>
       </div>
       
-      <Card className="mt-16 rounded-lg">
+      <Card className="mt-16">
         <CardHeader className="flex flex-row items-center justify-between">
             <div className="flex items-center gap-4">
                 <Briefcase className="h-6 w-6 text-primary sm:h-8 sm:w-8" />
-                <CardTitle className="font-headline text-xl sm:text-2xl">My Portfolio</CardTitle>
+                <CardTitle className="font-headline text-xl sm:text-2xl">{t('achievement_page.portfolio_title')}</CardTitle>
             </div>
         </CardHeader>
         <CardContent className="space-y-4">
             {portfolioProjects.length > 0 ? (
                 portfolioProjects.map(project => (
-                    <div key={project.title} className="rounded-lg border p-4">
+                    <div key={project.title} className="border p-4">
                         <h4 className="font-semibold">{project.title}</h4>
                         <p className="my-2 text-sm text-muted-foreground">{project.description}</p>
                         <div className="flex flex-wrap gap-2">
@@ -89,8 +93,8 @@ export default function AchievementPage() {
                 ))
             ) : (
                 <div className="py-8 text-center text-muted-foreground">
-                    <p>You haven't added any projects yet.</p>
-                    <p>An admin can add projects via the dashboard.</p>
+                    <p>{t('achievement_page.no_projects_yet')}</p>
+                    <p>{t('achievement_page.admin_can_add_projects')}</p>
                 </div>
             )}
         </CardContent>

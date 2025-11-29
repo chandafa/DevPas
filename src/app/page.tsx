@@ -1,5 +1,3 @@
-
-
 'use client';
 
 import Link from 'next/link';
@@ -291,7 +289,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
                 {t('upcoming_events_section.title')}
               </h2>
-              <Button asChild variant="outline" className="rounded-lg">
+              <Button asChild variant="outline">
                 <Link href="/events">{t('upcoming_events_section.view_all')}</Link>
               </Button>
             </div>
@@ -310,7 +308,7 @@ export default function Home() {
               <h2 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
                 {t('popular_courses_section.title')}
               </h2>
-              <Button asChild variant="outline" className="rounded-lg">
+              <Button asChild variant="outline">
                 <Link href="/courses">{t('popular_courses_section.view_all')}</Link>
               </Button>
             </div>
@@ -360,7 +358,7 @@ export default function Home() {
                     className="md:basis-1/2 lg:basis-1/3"
                   >
                     <div className="p-1 h-full">
-                      <Card className="h-full flex flex-col rounded-lg">
+                      <Card className="h-full flex flex-col">
                         <CardContent className="flex-1 p-6 text-center">
                           <Avatar className="mx-auto h-20 w-20 mb-4">
                             <AvatarImage
@@ -407,9 +405,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    

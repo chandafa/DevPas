@@ -92,7 +92,7 @@ export default function ForumPage() {
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="rounded-lg">{t('forum_page.new_discussion_button')}</Button>
+            <Button>{t('forum_page.new_discussion_button')}</Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[625px]">
             <DialogHeader>
@@ -155,11 +155,11 @@ export default function ForumPage() {
                 />
                 <DialogFooter>
                   <DialogClose asChild>
-                    <Button type="button" variant="secondary" className="rounded-lg">
+                    <Button type="button" variant="secondary">
                       Cancel
                     </Button>
                   </DialogClose>
-                  <Button type="submit" disabled={isLoading} className="rounded-lg">
+                  <Button type="submit" disabled={isLoading}>
                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     Post Discussion
                   </Button>
@@ -172,7 +172,7 @@ export default function ForumPage() {
 
       <div className="space-y-6">
         {forumDiscussions.map((thread) => (
-          <Card key={thread.id} className="rounded-lg">
+          <Card key={thread.id}>
             <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
                 <div>
