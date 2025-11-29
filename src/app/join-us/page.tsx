@@ -1,8 +1,31 @@
+'use client';
+
 import { Icons } from '@/components/icons';
 import { UserAuthForm } from '@/components/user-auth-form';
+import { useAuth } from '@/lib/auth';
+import { Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function JoinUsPage() {
+  const { isLoggedIn, isUserLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isUserLoading && isLoggedIn) {
+      router.push('/dashboard');
+    }
+  }, [isLoggedIn, isUserLoading, router]);
+
+  if (isUserLoading || isLoggedIn) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
   return (
     <div className="container relative flex min-h-screen flex-col items-center justify-center py-12 md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
