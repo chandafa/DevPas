@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import Link from 'next/link';
@@ -175,15 +176,15 @@ export default function Home() {
                 </Button>
               </div>
               <div className="grid grid-cols-2 gap-6">
-                <div className="rounded-lg bg-card p-6 text-center shadow-lg">
+                <div className="bg-card p-6 text-center shadow-lg">
                   <BookOpen className="mx-auto h-10 w-10 text-primary mb-2" />
                   <h3 className="text-lg font-semibold">{t('about_section.learn')}</h3>
                 </div>
-                <div className="rounded-lg bg-card p-6 text-center shadow-lg">
+                <div className="bg-card p-6 text-center shadow-lg">
                   <HeartHandshake className="mx-auto h-10 w-10 text-primary mb-2" />
                   <h3 className="text-lg font-semibold">{t('about_section.collaborate')}</h3>
                 </div>
-                <div className="rounded-lg bg-card p-6 text-center shadow-lg col-span-2">
+                <div className="bg-card p-6 text-center shadow-lg col-span-2">
                   <Users className="mx-auto h-10 w-10 text-primary mb-2" />
                   <h3 className="text-lg font-semibold">{t('about_section.contribute')}</h3>
                 </div>
@@ -396,7 +397,7 @@ export default function Home() {
               <p className="mt-4 text-lg text-muted-foreground">
                 {t('cta_section.description')}
               </p>
-              <Button asChild size="lg" className="rounded-lg">
+              <Button asChild size="lg">
                 <Link href="/join-us">{t('cta_section.join_button')}</Link>
               </Button>
             </div>
@@ -406,6 +407,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 
