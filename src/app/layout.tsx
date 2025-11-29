@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: 'DevPas Hub',
   description:
     'A community hub for aspiring developers to learn, connect, and grow.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
