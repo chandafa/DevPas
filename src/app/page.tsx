@@ -129,7 +129,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full min-h-screen flex items-center justify-center">
+        <section className="relative w-full flex flex-col items-center justify-center min-h-screen">
            {heroImage && <Image
                 src={heroImage.imageUrl}
                 alt="Hero background"
@@ -146,10 +146,10 @@ export default function Home() {
                 {t('hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="rounded-lg">
+                <Button asChild size="lg">
                   <Link href="/join-us">{t('hero.join_button')}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-lg">
+                <Button asChild variant="outline" size="lg">
                   <Link href="/events">{t('hero.events_button')}</Link>
                 </Button>
               </div>
@@ -406,3 +406,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
