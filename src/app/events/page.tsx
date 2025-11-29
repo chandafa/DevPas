@@ -42,10 +42,10 @@ export default function EventsPage() {
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div className="mb-12 text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+        <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Community Events
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
           Join our workshops, meetups, and hackathons. Connect with peers, learn
           from experts, and grow your network.
         </p>
@@ -53,7 +53,7 @@ export default function EventsPage() {
 
       <div className="mb-8 flex justify-end">
         <Select value={sortOrder} onValueChange={setSortOrder}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full sm:w-[180px]">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
           <SelectContent>
@@ -65,7 +65,7 @@ export default function EventsPage() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {sortedEvents.map((event) => (
           <EventCard key={event.id} event={event} />
         ))}

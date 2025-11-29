@@ -27,22 +27,22 @@ export default function AchievementPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-16 sm:py-24">
       <div className="text-center">
-        <Award className="mx-auto h-16 w-16 text-primary" />
-        <h1 className="mt-8 font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+        <Award className="mx-auto h-12 w-12 text-primary sm:h-16 sm:w-16" />
+        <h1 className="mt-6 font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           My Achievements
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
           Track your progress and celebrate your accomplishments within the community.
         </p>
       </div>
 
-       <Card className="mt-16">
+       <Card className="mt-12 rounded-lg sm:mt-16">
         <CardHeader>
           <CardTitle>Overall Progress</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-center justify-between mb-2">
-            <p className="text-muted-foreground">You've earned {earnedCount} of {totalCount} achievements.</p>
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-sm text-muted-foreground sm:text-base">You've earned {earnedCount} of {totalCount} achievements.</p>
             <p className="font-bold text-primary">{Math.round(progressPercentage)}%</p>
           </div>
           <Progress value={progressPercentage} />
@@ -52,11 +52,11 @@ export default function AchievementPage() {
       <div className="mt-12">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {achievements.map((ach) => (
-            <Card key={ach.title} className={`transition-opacity ${!ach.earned ? 'opacity-40' : ''}`}>
+            <Card key={ach.title} className={`rounded-lg transition-opacity ${!ach.earned ? 'opacity-40' : ''}`}>
               <CardHeader className="flex flex-row items-center gap-4">
                 {ach.icon}
                 <div>
-                  <CardTitle className="font-headline text-xl">{ach.title}</CardTitle>
+                  <CardTitle className="font-headline text-lg sm:text-xl">{ach.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -67,19 +67,19 @@ export default function AchievementPage() {
         </div>
       </div>
       
-      <Card className="mt-16">
+      <Card className="mt-16 rounded-lg">
         <CardHeader className="flex flex-row items-center justify-between">
             <div className="flex items-center gap-4">
-                <Briefcase className="h-8 w-8 text-primary" />
-                <CardTitle className="font-headline text-2xl">My Portfolio</CardTitle>
+                <Briefcase className="h-6 w-6 text-primary sm:h-8 sm:w-8" />
+                <CardTitle className="font-headline text-xl sm:text-2xl">My Portfolio</CardTitle>
             </div>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
             {portfolioProjects.length > 0 ? (
                 portfolioProjects.map(project => (
                     <div key={project.title} className="rounded-lg border p-4">
                         <h4 className="font-semibold">{project.title}</h4>
-                        <p className="text-sm text-muted-foreground my-2">{project.description}</p>
+                        <p className="my-2 text-sm text-muted-foreground">{project.description}</p>
                         <div className="flex flex-wrap gap-2">
                             {project.tags.map(tag => (
                                 <Badge key={tag} variant="secondary">{tag}</Badge>
@@ -88,7 +88,7 @@ export default function AchievementPage() {
                     </div>
                 ))
             ) : (
-                <div className="text-center text-muted-foreground py-8">
+                <div className="py-8 text-center text-muted-foreground">
                     <p>You haven't added any projects yet.</p>
                     <p>An admin can add projects via the dashboard.</p>
                 </div>

@@ -83,16 +83,16 @@ export default function ForumPage() {
     <div className="container mx-auto max-w-4xl px-4 py-16 sm:py-24">
       <div className="mb-12 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
         <div>
-          <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+          <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl">
             {t('forum_page.title')}
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base text-muted-foreground md:text-lg">
             {t('forum_page.subtitle')}
           </p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button>{t('forum_page.new_discussion_button')}</Button>
+            <Button className="rounded-lg">{t('forum_page.new_discussion_button')}</Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[625px]">
             <DialogHeader>
@@ -105,7 +105,7 @@ export default function ForumPage() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
+                className="space-y-4"
               >
                 <FormField
                   control={form.control}
@@ -129,7 +129,7 @@ export default function ForumPage() {
                       <FormControl>
                         <Textarea
                           placeholder="I'm having trouble with..."
-                          className="min-h-[150px]"
+                          className="min-h-[120px]"
                           {...field}
                         />
                       </FormControl>
@@ -155,11 +155,11 @@ export default function ForumPage() {
                 />
                 <DialogFooter>
                   <DialogClose asChild>
-                    <Button type="button" variant="secondary">
+                    <Button type="button" variant="secondary" className="rounded-lg">
                       Cancel
                     </Button>
                   </DialogClose>
-                  <Button type="submit" disabled={isLoading}>
+                  <Button type="submit" disabled={isLoading} className="rounded-lg">
                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     Post Discussion
                   </Button>
@@ -172,12 +172,12 @@ export default function ForumPage() {
 
       <div className="space-y-6">
         {forumDiscussions.map((thread) => (
-          <Card key={thread.id}>
-            <CardContent className="p-6">
+          <Card key={thread.id} className="rounded-lg">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
                 <div>
                   <Link href={`/forum/${thread.id}`}>
-                    <h2 className="font-headline text-xl font-semibold hover:text-primary">
+                    <h2 className="font-headline text-lg font-semibold hover:text-primary sm:text-xl">
                       {thread.title}
                     </h2>
                   </Link>

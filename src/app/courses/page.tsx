@@ -57,10 +57,10 @@ export default function CoursesPage() {
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <div className="mb-12 text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
+        <h1 className="font-headline text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           Our Courses
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
           From fundamentals to advanced topics, our courses are designed to
           equip you with the skills needed in the modern tech landscape.
         </p>
@@ -94,7 +94,7 @@ export default function CoursesPage() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {filteredCourses.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
